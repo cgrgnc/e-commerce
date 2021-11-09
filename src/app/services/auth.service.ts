@@ -5,6 +5,7 @@ import { tap } from 'rxjs/operators';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { v4 as uuid } from 'uuid';
+import { Hidden } from './hidden';
 
 interface AuthResponse{
   idToken: string;
@@ -22,16 +23,19 @@ interface AuthResponse{
 
 export class AuthService {
 
-  apiKey = "AIzaSyCPoBazzJYQDR_kUMlfSLFNHTrkSYJK3HI";
-  urlSignUp = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" + this.apiKey;
-  urlLogIn = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" + this.apiKey;
+  
+  apiKey = this.hidden.apiKey;
+  
+  
+  urlLogIn = this.hidden.urlLogIn;
 
-  url = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCPoBazzJYQDR_kUMlfSLFNHTrkSYJK3HI";
+  
+  url = this.hidden.url;
 
   user = new BehaviorSubject<User>(null);
   
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router, private hidden: Hidden) { }
 
   signUp(email: string, password: string){
     
