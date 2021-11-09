@@ -1,0 +1,39 @@
+<div class="main">
+    <div class="top">
+        <div class="first">QUICK LINKS</div>
+        <div class="second">GET IN TOUCH</div>
+        <div class="third">NEWSLETTER</div>
+    </div>
+    <div class="middle">
+        <div class="first">
+            <div>Contact</div>
+        </div>
+        <div class="second">
+            Sign up to stay in the loop. Receive updates, access to exclusive deals, and more.
+        </div>
+        <div class="third">
+            <form #subsForm="ngForm" class='newsletter-form' (ngSubmit)="onSubmit(subsForm)">
+                <input ngModel type="email" name="email" placeholder="Email Adress">
+                <button class="btn">SIGN UP</button>
+            </form>
+            <div *ngIf="successSub" class="subText">Subscription is successfull!</div>
+        </div>
+    </div>
+    <div class="mobile-layout flex-center">
+        <div class="first-mobile flex-center">
+            <div>QUICK LINKS</div>
+            <div>Contact</div>
+        </div>
+        <div class="second-mobile flex-center">
+            <div>GET IN TOUCH</div>
+            <div>Sign up to stay in the loop. Receive updates, access to exclusive deals, and more.</div>
+        </div>
+        <div class="third-mobile">
+            <form #subsForm="ngForm" class='newsletter-form' (ngSubmit)="onSubmit(subsForm)">
+                <input ngModel type="email" name="email" placeholder="Email Adress">
+                <button class="btn">SIGN UP</button>
+                <div *ngIf="successSub" class="subText">Subscription is successfull!</div>
+            </form>
+        </div>
+    </div>
+</div>

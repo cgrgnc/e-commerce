@@ -1,0 +1,52 @@
+<div class="main">
+    <div class="first-row">
+        <div><a [routerLink]="[' ']" routerLinkActive="router-link-active"> Home </a> > {{ this.itemservice.items[0] }}
+        </div>
+        <app-horizontalline></app-horizontalline>
+        <div class="second-row-cat">
+            <div></div>
+            <!-- <div class="sr-right-cat">
+                <div>Sort by</div>
+                <div class="sorting-cat">
+                    <div class="featured-cat">Featured <i class="fas fa-chevron-down i-cat"></i></div>
+                    <li class="dropdown-cat">
+                        <ul>Best selling</ul>
+                        <ul>Alphabetically A-Z</ul>
+                        <ul>Alphabetically Z-A</ul>
+                        <ul>Price, low to high</ul>
+                        <ul>Price, high to low</ul>
+                        <ul>Date, new to old</ul>
+                        <ul>Date, old to new</ul>
+                    </li>
+                </div>
+                <div>
+                    <i class="fab fa-microsoft i-cat"></i>
+                    <i class="fas fa-th-list i-cat"></i>
+                </div>
+            </div> -->
+        </div>
+        <div class="main-row-cat">
+            <ng-template *ngIf="!isMobile" ngFor [ngForOf]='bikePage1' let-i = 'index'>
+                <div class="card-cat active-card card-mobile" [routerLink]="['/details']" routerLinkActive="router-link-active" #page1 (click)="toDetail(i,'bikePage1')">
+                    <img src='{{ this.itemservice.bikePage1[i].img }}' alt="card">
+                    <div class="title">{{ this.itemservice.bikePage1[i].title }}</div>
+                    <div class="price">{{ this.itemservice.bikePage1[i].price | currency : 'EUR'}}</div>
+                </div>
+            </ng-template>
+            <ng-template *ngIf="!isMobile" ngFor [ngForOf]='bikePage2' let-i = 'index'>
+                <div class="card-cat card-mobile" [routerLink]="['/details']" routerLinkActive="router-link-active" #page2 (click)="toDetail(i,'bikePage1')">
+                    <img src='{{ this.itemservice.bikePage2[i].img }}' alt="card">
+                    <div class="title">{{ this.itemservice.bikePage2[i].title }}</div>
+                    <div class="price">{{ this.itemservice.bikePage2[i].price | currency : 'EUR' }}</div>
+                </div>
+            </ng-template>
+        </div>
+        <app-horizontalline></app-horizontalline>
+        <div class="third-row-cat">
+            <div><i class="fas fa-long-arrow-alt-left pageNumber i-cat" (click)="ChoosePage1()"></i></div>
+            <div (click)="ChoosePage1()" class="pageNumber">1</div>
+            <div (click)="ChoosePage2();$event.preventDefault()" class="pageNumber">2</div>
+            <div><i class="fas fa-long-arrow-alt-right pageNumber i-cat" (click)="ChoosePage2()"></i></div>
+        </div>
+    </div>
+</div>

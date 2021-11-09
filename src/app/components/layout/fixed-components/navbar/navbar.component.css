@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.bold{
+    font-weight: bold;
+}
+.body{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.main{
+    width: 1000px;
+}
+
+#cart-mobile{
+    display: none;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5% 0;
+    color: #FBF4E9;
+    position: relative;
+}
+
+a{
+    text-decoration: none;
+    color: #FBF4E9;
+  }
+  
+a:hover{
+    text-decoration: none;
+    color: #FBF4E9;
+}
+
+.icon{
+    font-size: 30px;
+    font-family: 'Pacifico', cursive;
+}
+
+.right{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 60%;
+}
+
+/* .search{
+    background-color: #021320;
+    padding: 10px 15px;
+    border-radius: 30px;
+} */
+
+/* .search-input{
+    background: none;
+    border: none;
+    outline-style: none;
+    color: white;
+    
+} */
+
+/* .search-input::placeholder{
+    color: #FBF4E9;
+    opacity: 0.9;
+} */
+
+/* cancel the x button */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.cart{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #021320;
+    border-radius: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.fa-shopping-basket{
+    margin-right: 7px;
+}
+
+.right-cart{
+    display: flex;
+    flex-direction: column;
+}
+
+.right-text{
+    margin-bottom: 10px;
+    font-size: 10px;
+    margin-right: 10px;
+}
+
+.right-right-text{
+    margin-bottom: 10px;
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+.right-middle{
+    margin: 0 10px;
+}
+
+.right-search{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.cart-circle{
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    line-height: 27px;
+    text-align: center;
+    background-color: #c23e3e;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    color: #0b283d;
+    
+}
+
+.categories2{
+    position: relative;
+
+}
+
+.categories{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+    font-size: 13px;
+    color: #F3F1F5;
+    padding-bottom: 15px;
+    font-weight: 200;
+}
+
+
+.fa-chevron-down{
+    margin-left: 5px;
+}
+
+/* .dropdown{
+    width: 15%;
+    padding: 20px;
+    position: absoulte;
+    top: 0px;
+    height: 0;
+} */
+
+.all:hover .dropdown, .cameras:hover .dropdown:hover{
+    display: block;
+    height: auto;
+}
+
+.dropdown{
+    position: absolute;
+    top: 20px;
+    display: none;
+    background-color: white;
+    width: 15%;
+    padding: 20px;
+    transform: all 0.1s ease-in-out;
+
+}
+
+.dropdown ul{
+    list-style: none;
+    font-size: 13px;
+    color: rgb(123, 123, 180);
+    font-weight: 500;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.categories div{
+    cursor: pointer;
+}
+
+.toggle-menu{
+    display: none;
+}
+
+.navm{
+    background-color: #0b283d;
+    width: 80%;
+    height: 100vh;
+    z-index: 9990;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    padding: 5px 15px;
+    transition: all 500ms linear;
+}
+.navm-first{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.navm-first .icon{
+    font-size: 30px !important;
+}
+.navm-first .fa-times{
+    margin: 0 15px;
+    font-size: 20px;
+}
+.navm-list{
+    margin-top: 20px;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.hamburger{
+    display: none;
+}
+.fas{
+    cursor: pointer;
+}
+
+
+@media (max-width: 1050px){
+    .main{
+        width: 90%;
+    }
+
+    
+    
+}
+
+
+@media only screen and (max-width: 768px){
+    .hamburger{
+        display: block;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    .navm.show{
+        left: 0;
+    }
+    .body.show{
+        background-color: #87AAAA;
+    }
+    .cart.show{
+        background-color: #0b283d;
+    }
+
+
+    .right-search2{
+        display: none;
+    }
+
+    .right-middle{
+        display: none;
+    }
+
+    .categories2{
+        display: none;
+    }
+    .right-right-text{
+        display: none;
+    }
+
+    .right{
+        width: auto;
+    }
+
+    @media (max-width: 398px){
+        .icon{
+            font-size: medium;
+        }
+    }
+    
+
+    
+}
+
+
+
+
+
+
+    
+
+
