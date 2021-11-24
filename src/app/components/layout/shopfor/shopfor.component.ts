@@ -18,8 +18,8 @@ export class ShopforComponent implements OnInit {
   routerpath = ["categories", "parts", "accessories", "clothing"];
   
   ngOnInit(): void {
-    window.onresize = () => this.isMobile = window.innerWidth <= 360;
-    if(document.documentElement.clientWidth < 360){
+    window.onresize = () => this.isMobile = window.innerWidth <= 400;
+    if(document.documentElement.clientWidth < 400){
       this.isMobile = true;
     }
 

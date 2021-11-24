@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class CartComponent implements OnInit {
   isAuthenticated:boolean;
+  isMobile:boolean = false;
 
   constructor(public cart: Cart, private authService: AuthService) { 
     
@@ -26,6 +27,11 @@ export class CartComponent implements OnInit {
         this.isAuthenticated = true;
       }
     })
+
+    window.onresize = () => this.isMobile = window.innerWidth <= 400;
+    if(document.documentElement.clientWidth < 400){
+      this.isMobile = true;
+    }
   }
 
   removeItem(id:string){

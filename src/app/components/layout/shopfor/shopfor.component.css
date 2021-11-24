@@ -55,7 +55,7 @@
     }
 }
 
-@media(max-width: 360px){
+@media(max-width: 400px){
     .categories{
         display: flex;
         flex-direction: row;

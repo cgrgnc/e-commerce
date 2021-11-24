@@ -58,6 +58,13 @@ input::placeholder{
 .product-name{
       display: inline-block;
 }
+.sec-col{
+    display: flex;
+    flex-direction: row;
+}
+.sec-col div{
+    margin-right: 10px;
+}
 
 .second-row{
       padding-top: 20px;

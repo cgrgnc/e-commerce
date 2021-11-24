@@ -12,6 +12,7 @@ import { PartsComponent } from './components/layout/categoriespage/parts/parts.c
 import { AccessoriesComponent } from './components/layout/categoriespage/accessories/accessories.component';
 import { CartComponent } from './components/layout/cart/cart.component';
 import { PaymentComponent } from './components/layout/payment/payment.component';
+import { AuthGuard } from './services/authguard/auth.guard';
 
 const routes: Routes = [
   { path: '' , component: LayoutComponent,
@@ -25,7 +26,7 @@ const routes: Routes = [
       { path: 'parts', component: PartsComponent},
       { path: 'accessories', component: AccessoriesComponent},
       { path: 'cart', component: CartComponent},
-      { path: 'payment', component: PaymentComponent}
+      { path: 'payment', component: PaymentComponent, canActivate:[AuthGuard]}
     ]
 
 },

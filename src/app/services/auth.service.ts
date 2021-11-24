@@ -85,6 +85,9 @@ export class AuthService {
     this.user.next(null);
     localStorage.removeItem('user');
   }
+  isLoggedIn(){
+    return localStorage.getItem("user");
+  }
 
   
 }
