@@ -7,7 +7,7 @@ src/app/services/hidden.ts
 
 
 # compiled output
-/dist
+# /dist
 /tmp
 /out-tsc
 # Only exists if Bazel was run
