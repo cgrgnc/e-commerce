@@ -39,7 +39,6 @@ import { PaymentComponent } from './components/layout/payment/payment.component'
     AppComponent,
     NavbarComponent,
     SlideComponent,
-    ShopforComponent,
     FooterComponent,
     LoginComponent,
     CreateaccountComponent,
@@ -52,6 +51,7 @@ import { PaymentComponent } from './components/layout/payment/payment.component'
     AccessoriesComponent,
     ClothingComponent,
     PaymentComponent,
+    ShopforComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +60,7 @@ import { PaymentComponent } from './components/layout/payment/payment.component'
     AngularFireModule.initializeApp(environment.firebase, 'angularfs'),
     AngularFirestoreModule,
     FormsModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [ItemService, AuthService, Cart, DatabaseService, AuthInterceptor],
   bootstrap: [AppComponent]

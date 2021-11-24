@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './components/layout/login/login.component';
-import { Router, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { CreateaccountComponent } from './components/layout/createaccount/createaccount.component';
 import { ShopforComponent } from './components/layout/shopfor/shopfor.component';
-
 import { DetailsComponent } from './components/layout/details/details.component';
 import { LayoutComponent } from './components/layout/layout.component';
-
 import { CategoriesComponent } from './components/layout/categoriespage/categories/categories.component';
 import { ClothingComponent } from './components/layout/categoriespage/clothing/clothing.component';
 import { PartsComponent } from './components/layout/categoriespage/parts/parts.component';
