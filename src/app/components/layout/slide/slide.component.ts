@@ -21,30 +21,38 @@ export class SlideComponent implements OnInit, AfterViewInit{
     var a = this.map.nativeElement;
     var current = a.querySelectorAll(".current_slide")[0];
     var nextImage = current.nextElementSibling;
-    var amountToMove = nextImage.style.left;
-    a.style.transform = 'translateX(-' + amountToMove + ')';
-    current.classList.remove("current_slide");
-    nextImage.classList.add("current_slide");
-    var nav = this.nav.nativeElement;
-    var current_nav = nav.querySelectorAll(".current")[0];
-    var next_nav = current_nav.nextElementSibling;
-    current_nav.classList.remove("current");
-    next_nav.classList.add("current");
+    if (nextImage === null){
+      null;
+    }else{
+      var amountToMove = nextImage.style.left;
+      a.style.transform = 'translateX(-' + amountToMove + ')';
+      current.classList.remove("current_slide");
+      nextImage.classList.add("current_slide");
+      var nav = this.nav.nativeElement;
+      var current_nav = nav.querySelectorAll(".current")[0];
+      var next_nav = current_nav.nextElementSibling;
+      current_nav.classList.remove("current");
+      next_nav.classList.add("current");
+    }
   }
 
   previous(){
     var a = this.map.nativeElement;
     var current = a.querySelectorAll(".current_slide")[0];
     var nextImage = current.previousElementSibling;
-    var amountToMove = nextImage.style.left;
-    a.style.transform = 'translateX(' + amountToMove + ')';
-    current.classList.remove("current_slide");
-    nextImage.classList.add("current_slide");
-    var nav = this.nav.nativeElement;
-    var current_nav = nav.querySelectorAll(".current")[0];
-    var next_nav = current_nav.previousElementSibling;
-    current_nav.classList.remove("current");
-    next_nav.classList.add("current")
+    if (nextImage === null){
+      null;
+    }else{
+      var amountToMove = nextImage.style.left;
+      a.style.transform = 'translateX(' + amountToMove + ')';
+      current.classList.remove("current_slide");
+      nextImage.classList.add("current_slide");
+      var nav = this.nav.nativeElement;
+      var current_nav = nav.querySelectorAll(".current")[0];
+      var next_nav = current_nav.previousElementSibling;
+      current_nav.classList.remove("current");
+      next_nav.classList.add("current");
+    }
   }
 
 
