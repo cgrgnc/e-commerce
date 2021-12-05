@@ -10,10 +10,6 @@
     "heroku-postbuild": "ng build --prod"
   },
   "private": true,
-  "engines": {
-    "node": "14.16.0",
-    "npm": "6.14.11"
-  },
   "dependencies": {
     "@angular/animations": "^12.2.10",
     "@angular/cli": "^12.2.10",
@@ -51,5 +47,9 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0"
+  },
+  "engines": {
+    "node": "14.16.0",
+    "npm": "6.14.11"
   }
 }
