@@ -2,6 +2,7 @@
     padding: 30px 0;
 }
 
+
 .top{
     display: flex;
     flex-direction: row;
@@ -83,6 +84,14 @@ input::placeholder{
 .subText{
     color: #A9333A;
 }
+.warning{
+    color: red;
+    text-align: left;
+}
+.warning-title{
+    font-weight: 600;
+}
+
 @media (max-width: 1050px){
     
 }
