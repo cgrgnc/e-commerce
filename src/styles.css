@@ -114,3 +114,17 @@ a:hover{
         padding-left: 20px;
     }
 }
+html, body { height: 100%; }
+body { 
+    position: relative;
+    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.progress-bar{
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1500;
+    color: orange;
+}

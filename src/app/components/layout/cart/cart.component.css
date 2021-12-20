@@ -105,6 +105,16 @@ input::placeholder{
     display: flex;
     flex-direction: row-reverse;
   }
+  input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 
   .btn{
     background-color: black;
@@ -134,4 +144,15 @@ input::placeholder{
           margin-top: 4px;
         padding: 5px 5px;
       }
+      .amount{
+        margin-right: 100px !important;
+      }
+      .sec-col{
+        justify-content: space-between;
+      }
+      
+  }
+
+  i{
+    cursor: pointer;
   }

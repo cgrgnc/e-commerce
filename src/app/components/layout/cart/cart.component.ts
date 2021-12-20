@@ -45,5 +45,8 @@ export class CartComponent implements OnInit {
     const quantity = form.value.number;
     return this.cart.updateQuantity(product, quantity);
   }
+  reduceProduct(form: NgForm, product:any){
+    
+  }
 
 }

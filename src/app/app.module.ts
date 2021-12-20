@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
-
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/layout/fixed-components/navbar/navbar.component';
 import { SlideComponent } from './components/layout/slide/slide.component';
@@ -14,9 +12,7 @@ import { CreateaccountComponent } from './components/layout/createaccount/create
 import { CartComponent } from './components/layout/cart/cart.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DetailsComponent } from './components/layout/details/details.component';
-
 import { LayoutComponent } from './components/layout/layout.component';
-
 import { CategoriesComponent } from './components/layout/categoriespage/categories/categories.component';
 import { HorizontallineComponent } from './components/common/horizontalline/horizontalline.component';
 import { environment } from 'src/environments/environment';
@@ -33,6 +29,7 @@ import { RouterModule } from '@angular/router';
 import { User } from './model/user';
 import { AuthInterceptor } from './services/auth.interceptor';
 import { PaymentComponent } from './components/layout/payment/payment.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -61,6 +58,7 @@ import { PaymentComponent } from './components/layout/payment/payment.component'
     AngularFirestoreModule,
     FormsModule,
     RouterModule,
+    BrowserAnimationsModule
   ],
   providers: [ItemService, AuthService, Cart, DatabaseService, AuthInterceptor],
   bootstrap: [AppComponent]

@@ -12,12 +12,14 @@ export class LoginComponent implements OnInit {
 
   constructor(private authService: AuthService, private router: Router) { }
 
+  error_message:any;
+
   ngOnInit(): void {
   }
   onLogin(form: NgForm){
     if(form.invalid){
-      return console.log('input is invalid');
-    }
+      this.error_message="input is invalid. Please check your email adress or password!";
+    }else{
     console.log(form.value);
     const email = form.value.email;
     const password = form.value.password;
@@ -26,8 +28,9 @@ export class LoginComponent implements OnInit {
       
       this.router.navigate(['/shopfor']);
     }, err => {
-      console.log(err);
+      this.error_message="input is invalid. Please check your email adress or password!";
     })
+  }
   }
 
 }

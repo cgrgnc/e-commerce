@@ -5,6 +5,7 @@
         <input ngModel type="email" name='email' required email placeholder="Email">
         <input ngModel type="password" name='password' required minlenght='4' placeholder="Password">
         <button class="btn">LOG IN</button>
+        <div class="errors">{{this.error_message}}</div>
         <div>or <a [routerLink]="['/home']" routerLinkActive="router-link-active" >Return to Store</a></div>
     </form>
 </div>

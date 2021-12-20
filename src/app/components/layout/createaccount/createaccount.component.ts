@@ -12,12 +12,14 @@ export class CreateaccountComponent implements OnInit {
 
   constructor(private authService: AuthService, private router: Router) { }
 
+  error_message:any;
+
   ngOnInit(): void {
   }
 
   onSubmit(form : NgForm){
     if(form.invalid){
-      return console.log('input is invalid');
+      this.error_message="Registeriation is unsuccessful! Email must be valid and password must have more than 6 characters.";
     }
     const email = form.value.email;
     const password = form.value.password;
@@ -26,7 +28,7 @@ export class CreateaccountComponent implements OnInit {
       
       this.router.navigate(['/shopfor']);
     }, err => {
-      console.log(err);
+      this.error_message="Registeriation unsuccessful! Email must be valid and password must have more than 6 characters.";
     })
   }
 

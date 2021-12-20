@@ -1,6 +1,8 @@
 <div class="body">
-  <!-- <div class="navbar"><app-navbar class="navbar2"></app-navbar></div> -->
   <app-navbar class="navbar"></app-navbar>
+  <div *ngIf="loading_bar" class="loading-bar-box">
+    <div class="loader-bar"></div>
+  </div>
   <div class="outlet"><div class="outlet2"><router-outlet></router-outlet></div></div>
   <div class="footer"><app-footer class="footer2"></app-footer></div> 
 </div>

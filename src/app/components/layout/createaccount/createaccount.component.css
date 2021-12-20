@@ -40,3 +40,6 @@ input{
       text-decoration: none;
       color: black;
   }
+  .errors{
+    color: red;
+}
