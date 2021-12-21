@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { AngularFirestore} from '@angular/fire/compat/firestore';
 import { map } from 'rxjs/operators';
 import { v4 as uuid } from 'uuid';
+import { Hidden } from './hidden';
 
 @Injectable({
   providedIn: 'root'
@@ -31,28 +32,27 @@ export class DatabaseService{
 
   
 
-  constructor(public afs: AngularFirestore, private http: HttpClient) { 
+  constructor(public afs: AngularFirestore, private http: HttpClient, private hidden: Hidden) { }
 
-
-}
+  client_id = this.hidden.unsplash_api;
 
   getBicyclesPage1(){
-    return this.http.get("https://api.unsplash.com/collections/iuAONw1hf3k/photos/?query=''&per_page=20&client_id=uSqHNuvq55SqP0cICoLzjGSpxCCEz9sZ92JKI9yvsrE&page=1").pipe(map((e:any) => e.map((e:any) => e.urls.small)));
+    return this.http.get(`https://api.unsplash.com/collections/iuAONw1hf3k/photos/?query=''&per_page=20&client_id=${this.client_id}&page=1`).pipe(map((e:any) => e.map((e:any) => e.urls.small)));
   }
   getBicyclesPage2(){
-    return this.http.get("https://api.unsplash.com/collections/iuAONw1hf3k/photos/?query=''&per_page=20&client_id=uSqHNuvq55SqP0cICoLzjGSpxCCEz9sZ92JKI9yvsrE&page=2").pipe(map((e:any) => e.map((e:any) => e.urls.small)));
+    return this.http.get(`https://api.unsplash.com/collections/iuAONw1hf3k/photos/?query=''&per_page=20&client_id=${this.client_id}&page=2`).pipe(map((e:any) => e.map((e:any) => e.urls.small)));
   }
 
   getParts(){
-    return this.http.get("https://api.unsplash.com/collections/MkltW8eSTkQ/photos/?query=''&per_page=20&client_id=uSqHNuvq55SqP0cICoLzjGSpxCCEz9sZ92JKI9yvsrE").pipe(map((e:any) => e.map((e:any) => e.urls.small)));
+    return this.http.get(`https://api.unsplash.com/collections/MkltW8eSTkQ/photos/?query=''&per_page=20&client_id=${this.client_id}`).pipe(map((e:any) => e.map((e:any) => e.urls.small)));
   }
 
   getAccessories(){
-    return this.http.get("https://api.unsplash.com/collections/-_X6rVMs3UA/photos/?query=''&per_page=20&client_id=uSqHNuvq55SqP0cICoLzjGSpxCCEz9sZ92JKI9yvsrE").pipe(map((e:any) => e.map((e:any) => e.urls.small)));
+    return this.http.get(`https://api.unsplash.com/collections/-_X6rVMs3UA/photos/?query=''&per_page=20&client_id=${this.client_id}`).pipe(map((e:any) => e.map((e:any) => e.urls.small)));
   }
 
   getClothing(){
-    return this.http.get("https://api.unsplash.com/collections/VzcUWJHRjgA/photos/?query=''&per_page=20&client_id=uSqHNuvq55SqP0cICoLzjGSpxCCEz9sZ92JKI9yvsrE").pipe(map((e:any) => e.map((e:any) => e.urls.small)));
+    return this.http.get(`https://api.unsplash.com/collections/VzcUWJHRjgA/photos/?query=''&per_page=20&client_id=${this.client_id}`).pipe(map((e:any) => e.map((e:any) => e.urls.small)));
   }
 
   // select Brand

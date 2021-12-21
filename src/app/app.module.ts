@@ -26,7 +26,6 @@ import { Cart } from './model/model';
 import { AuthService } from './services/auth.service';
 import { DatabaseService } from './services/database.service';
 import { RouterModule } from '@angular/router';
-import { User } from './model/user';
 import { AuthInterceptor } from './services/auth.interceptor';
 import { PaymentComponent } from './components/layout/payment/payment.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

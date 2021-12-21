@@ -10,4 +10,6 @@ export class Hidden{
   urlLogIn = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" + this.apiKey;
 
   url = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCPoBazzJYQDR_kUMlfSLFNHTrkSYJK3HI";
+
+  unsplash_api = "uSqHNuvq55SqP0cICoLzjGSpxCCEz9sZ92JKI9yvsrE";
 }
