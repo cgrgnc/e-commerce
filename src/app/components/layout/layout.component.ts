@@ -17,7 +17,7 @@ export class LayoutComponent implements OnInit {
   ngOnInit() {
     const timeout = setTimeout(()=>{
       this.loading_bar = false;
-    },500)
+    },2000)
   }
 
 }

@@ -7,7 +7,7 @@ import { Injectable } from "@angular/core";
 export class Hidden{
     apiKey = "AIzaSyCPoBazzJYQDR_kUMlfSLFNHTrkSYJK3HI";
   
-  urlLogIn = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" + this.apiKey;
+  urlLogIn = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCPoBazzJYQDR_kUMlfSLFNHTrkSYJK3HI";
 
   url = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCPoBazzJYQDR_kUMlfSLFNHTrkSYJK3HI";
 
