@@ -4,7 +4,7 @@
 
 export const environment = {
   production: true,
-  apiKey: "AIzaSyCPoBazzJYQDR_kUMlfSLFNHTrkSYJK3HI",
+  apiKey: "",
   urlLogIn: "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCPoBazzJYQDR_kUMlfSLFNHTrkSYJK3HI",
   firebase: {
     apiKey: "AIzaSyCPoBazzJYQDR_kUMlfSLFNHTrkSYJK3HI",
