@@ -1,0 +1,55 @@
+<div class="body" #body>
+<div class="main">
+    <div class="navbar" #navbar>
+        <div class="navm" #navm>
+            <div class="navm-first">
+                <div (click)="onClose()" class="icon"><a [routerLink]="['/']" routerLinkActive="router-link-active" >Bike SHOP</a></div>
+                <div (click)="onClose()"><i class="fas fa-times"></i></div>
+            </div>
+            <ul class="navm-list">
+                <div (click)="onClose()" class="navm-items"><a [routerLink]="['/categories']" routerLinkActive="router-link-active" >{{ items[0] | uppercase }}</a></div>
+                <div (click)="onClose()" class="navm-items"><a [routerLink]="['/parts']" routerLinkActive="router-link-active" >{{ items[1] | uppercase }}</a></div>
+                <div (click)="onClose()" class="navm-items"><a [routerLink]="['/accessories']" routerLinkActive="router-link-active" >{{ items[2] | uppercase }}</a></div>
+                <div (click)="onClose()" class="navm-items"><a [routerLink]="['/clothing']" routerLinkActive="router-link-active" >{{ items[3] | uppercase }}</a></div>
+                <div (click)="onClose()" *ngIf="!isAuthenticated" class=""><a [routerLink]="['/login']" routerLinkActive="router-link-active" >Sign in</a></div>
+                <div (click)="onClose()" *ngIf="!isAuthenticated" class=""><a [routerLink]="['/signup']" routerLinkActive="router-link-active" >Create an Account</a></div>
+                <div (click)="onClose()" *ngIf="isAuthenticated" class=""><a [routerLink]="['/shopfor']" routerLinkActive="router-link-active" (click)="logOut()">Logout</a></div>
+            </ul>
+            
+        </div>
+        <div class="hamburger" (click)="openNavm()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="icon"><a [routerLink]="['/']" routerLinkActive="router-link-active" >Bike SHOP</a></div>
+        <div class="right">
+            <div class="right-search right-search2">
+                <div *ngIf="!isAuthenticated" class="right-text bold"><a [routerLink]="['/login']" routerLinkActive="router-link-active" >Sign in</a></div>
+            </div>
+            <div *ngIf="!isAuthenticated" class="right-middle right-text">or</div>
+            <div class="right-cart right-search">
+                <div *ngIf="!isAuthenticated" class="right-right-text bold"><a [routerLink]="['/signup']" routerLinkActive="router-link-active" >Create an Account</a></div>
+                <div *ngIf="isAuthenticated" class="right-right-text bold"><a [routerLink]="['/shopfor']" routerLinkActive="router-link-active" (click)="logOut()">Logout</a></div>
+                <div #cartHTML class="cart" [routerLink]="['/cart']" routerLinkActive="router-link-active" ><i class="fas fa-shopping-basket"></i>CART<div *ngIf="validCartCount" class="cart-circle">{{ this.cart.cartCount }}</div></div>
+            </div>
+        </div>
+    </div>
+    <div class="categories2">
+        <div class="categories">
+            <div class="all">
+                <div class="cameras"><a [routerLink]="['/categories']" routerLinkActive="router-link-active" >{{ items[0] | uppercase }}</a></div>
+                <!-- <li class="dropdown">
+                    <ul><a [routerLink]="['/routePath']" routerLinkActive="router-link-active" ></a>{{ biketypes[0]}}</ul>
+                    <ul><a [routerLink]="['/routePath']" routerLinkActive="router-link-active" ></a>{{ biketypes[1]}}</ul>
+                    <ul><a [routerLink]="['/routePath']" routerLinkActive="router-link-active" ></a>{{ biketypes[2]}}</ul>
+                </li> -->
+            </div>
+            <div>
+                <div class="camerasc"><a [routerLink]="['/parts']" routerLinkActive="router-link-active" >{{ items[1] | uppercase }}</a></div>
+            </div>
+            
+            <div class="cameras2"><a [routerLink]="['/accessories']" routerLinkActive="router-link-active" >{{ items[2] | uppercase }}</a></div>
+            <div><a [routerLink]="['/clothing']" routerLinkActive="router-link-active" >{{ items[3] | uppercase }}</a></div>
+        </div>
+    </div>
+</div>
+</div>

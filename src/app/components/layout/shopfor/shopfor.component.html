@@ -1,0 +1,59 @@
+<app-slide></app-slide>
+<div class="main">
+    <div class="body"><div class="line"></div></div>
+    <div class="title">
+        <div class="left">SHOP FOR</div>
+    </div>
+    <div class="categories">
+        <ng-template ngFor [ngForOf]='homeProducts' let-i= 'index'>
+            <div class="card" routerLink="/{{routerpath[i]}}" routerLinkActive="router-link-active">
+                <img src="{{ homeProducts[i].img}}" alt="lens" class="shopforimg">
+                <div>{{ categories[i]}}</div>
+            </div>
+        </ng-template>
+    </div>
+    <div class="body"><div class="line"></div></div>
+    <div class="title">
+        <div class="left">{{ categories[0] }}</div>
+        <div class="right"><a [routerLink]="['/categories']" routerLinkActive="router-link-active" >More {{ categories[0] }} ></a></div>
+    </div>
+    <div class="categories">
+        <ng-template ngFor [ngForOf]='bikePage1' let-i='index'>
+                <div *ngIf="(i<5 && !isMobile) || (i<3 && isMobile)" class="card-two" (click)="toDetail(i, 'bikePage1')" [routerLink]="['/details']" routerLinkActive="router-link-active" >
+                    <img src="{{ bikePage1[i].img }}" alt="lens" class="bikesimg">
+                    <div>{{ bikePage1[i].title }}</div>
+                    <div>{{ bikePage1[i].price | currency : 'EUR'}}</div>
+                </div>
+        </ng-template>    
+    </div>
+    <div class="body"><div class="line"></div></div>
+    <div class="title">
+        <div class="left">{{ categories[1] }}</div>
+        <div class="right"><a [routerLink]="['/parts']" routerLinkActive="router-link-active" >More {{ categories[1] }}></a></div>
+    </div>
+    <div class="categories">
+        <ng-template ngFor [ngForOf]='parts' let-i='index'>
+                <div *ngIf="(i<5 && !isMobile) || (i<3 && isMobile)" class="card-two" (click)="toDetail(i, 'parts')" [routerLink]="['/details']" routerLinkActive="router-link-active">
+                    <img src="{{ parts[i].img }}" alt="lens" class="bikesimg">
+                    <div>{{ parts[i].title }}</div>
+                    <div>{{ parts[i].price | currency : 'EUR' }}</div>
+                </div>
+        </ng-template>
+    </div>
+    <div class="body"><div class="line"></div></div>
+    <div class="title">
+        <div class="left">{{ categories[2] }}</div>
+        <div class="right"><a [routerLink]="['/accessories']" routerLinkActive="router-link-active" >More {{ categories[2] }}></a></div>
+    </div>
+    <div class="categories">
+        <ng-template ngFor [ngForOf]='accessories' let-i='index'>
+                <div *ngIf="(i<5 && !isMobile) || (i<3 && isMobile)" class="card-two" (click)="toDetail(i, 'accessories')" [routerLink]="['/details']" routerLinkActive="router-link-active">
+                    <img src="{{ accessories[i].img }}" alt="lens" class="bikesimg">
+                    <div>{{ accessories[i].title }}</div>
+                    <div>{{ accessories[i].price | currency : 'EUR' }}</div>
+                </div>
+        </ng-template>
+    </div>
+    
+
+</div>

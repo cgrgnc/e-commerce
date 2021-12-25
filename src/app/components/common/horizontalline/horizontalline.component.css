@@ -1,0 +1,13 @@
+.body{
+    padding-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.line{
+    width: 95%;
+    border-top: solid;
+    border-width: 1px;
+    border-color: rgb(204, 203, 203);
+}

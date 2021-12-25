@@ -1,0 +1,28 @@
+<div class="body">
+    <div class="main">
+        <div>ADRESS AND PAYMENT INFORMATION</div>
+        <form #adressForm='ngForm' (ngSubmit)='onSubmit(adressForm)'>
+            <div>Shipping Adress</div>
+            <div class="names">
+                <input ngModel type="text" name='firstName' required first-name placeholder="First Name">
+                <input ngModel type="text" name='lastName' required last-name placeholder="Last Name">
+            </div>
+            <input ngModel type="text" name='street' required street placeholder="Street and house number">
+            <input ngModel type="text" name='additionalAdress' placeholder="Additional address (optional)">
+            <div class="names">
+                <input ngModel type="text" name='postalCode' required postal-code placeholder="Postal code">
+                <input ngModel type="text" name='city' required city placeholder="City">
+            </div>
+            <input ngModel type="text" name='country' required city placeholder="Country">
+            <input ngModel type="text" name='phone' placeholder="Phone (optional)">
+            <input type="checkbox" #saveAdress><label for="checkbox">Save this information for next time</label>
+            <div class="warning">
+                <div class="warning-title">Legal Disclaimer</div>
+                <div>This website is created for purpose of showing portfolio.<br/>A real purchase / card transaction is not available.<br/>We don't require any real information. Therefore, please don't give any real information and credit card details.</div>
+            </div>
+            <button class="btn">Accept / Pay</button>
+        </form>
+        
+        
+    </div>
+</div>

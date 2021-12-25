@@ -1,0 +1,45 @@
+form{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.main{
+    width: 30%;
+    padding: 30px 0;
+}
+
+.main-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+input{
+    border: none;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.btn{
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    
+  }
+  
+  .btn:active {
+    transform: scale(0.98);
+  }
+
+  a{
+      text-decoration: none;
+      color: black;
+  }
+  .errors{
+    color: red;
+}

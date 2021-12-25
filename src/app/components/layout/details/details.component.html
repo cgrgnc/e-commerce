@@ -1,0 +1,13 @@
+<div class="main">
+    <app-horizontalline></app-horizontalline>
+    <div class="main-row">
+        <img src="{{ data.img }}" alt="lens">
+        <div class="mr-right">
+            <div class="title">{{ data.title }}</div>
+            <div class="price">{{ data.price | currency : 'EUR' }}</div>
+            <button (click)="addToCart(data)" class="btn">ADD TO CART</button>
+            <app-horizontalline></app-horizontalline>
+            <div>{{ data.description }}</div>
+        </div>
+    </div>
+</div>

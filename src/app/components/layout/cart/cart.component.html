@@ -1,0 +1,54 @@
+<div class="main">
+    <div class="first-row">
+        <div>SHOPPING CART</div>
+        <!-- <i class="fas fa-times"></i> -->
+    </div>
+    <div class="body"><div class="line"></div></div>
+    <div *ngIf="this.cart.cartCount == 0 || this.cart.cartCount == 1" >You have {{ this.cart.cartCount }} product in your cart.</div>
+    <div *ngIf="this.cart.cartCount > 1" >You have {{ this.cart.cartCount }} products in your cart.</div>
+    <div class="body"><div class="line"></div></div>
+    <div class="second-row2">
+            <ng-template *ngIf="!isMobile" ngFor [ngForOf]='this.cart.items' let-i='index'>
+            <div class="second-row">
+                <img src="{{ this.cart.items[i].product.img}}" alt="lens">
+                <div class="product-name">{{ this.cart.items[i].product.title }}</div>
+                <div class="amount">x{{ this.cart.items[i].quantity }}</div>
+                <div class="preise">{{ this.cart.items[i].product.price | currency : 'EUR'}}</div>
+                <!-- <form #quantityForm='ngForm' (ngSubmit)='updateQuantity(quantityForm, this.cart.items[i].product)'>
+                    <input ngModel type="number" name="number" #inputQuantity class="input-change" placeholder="Amount">
+                    <button class="btn">Change</button>
+                </form> -->
+                <i class="fas fa-times cancel-product" (click)="removeItem(this.cart.items[i].product.id)"></i>
+            </div>
+            </ng-template>
+            <ng-template *ngIf="isMobile" ngFor [ngForOf]='this.cart.items' let-i='index'>
+                <div class="information">
+                    <div class="second-row">
+                        <img src="{{ this.cart.items[i].product.img}}" alt="lens">
+                        <div class="preise">{{ this.cart.items[i].product.price | currency : 'EUR'}}</div>
+                        <!-- <form #quantityForm='ngForm' (ngSubmit)='updateQuantity(quantityForm, this.cart.items[i].product)'>
+                            <input ngModel type="number" name="number" #inputQuantity class="input-change" placeholder="Amount">
+                            <button class="btn">Change</button>
+                        </form> -->
+                        <i class="fas fa-times cancel-product" (click)="removeItem(this.cart.items[i].product.id)"></i>
+                    </div>
+                    <div class="sec-col">
+                        <div class="product-name">{{ this.cart.items[i].product.title }}</div>
+                        <div class="amount">x{{ this.cart.items[i].quantity }}</div>
+                    </div>
+                </div>
+                </ng-template>
+            
+    </div>
+    <div class="body"><div class="line"></div></div>
+    <div class="third-row">
+        <div>Subtotal {{ this.cart.total | currency : 'EUR'}}</div>
+    </div>
+    <div class="fourth-row">Shipping, taxes, and discounts will be calculated at checkout.</div>
+    <div class="fif">
+        <button *ngIf="isAuthenticated" class="btn" [routerLink]="['/payment']" routerLinkActive="router-link-active" ><i class="fas fa-shopping-basket"></i> CHECKOUT</button>
+        <button *ngIf="!isAuthenticated" class="btn" [routerLink]="['/login']" routerLinkActive="router-link-active" ><i class="fas fa-shopping-basket"></i> CHECKOUT</button>
+    </div>
+    
+
+</div>

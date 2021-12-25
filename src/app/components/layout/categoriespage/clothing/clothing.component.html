@@ -1,0 +1,41 @@
+<div class="main">
+    <div class="first-row">
+        <div><a [routerLink]="[' ']" routerLinkActive="router-link-active"> Home </a> > {{ this.itemservice.items[3] }}
+        </div>
+        <app-horizontalline></app-horizontalline>
+        <div class="second-row-cat">
+            <div></div>
+            <!-- <div class="sr-right-cat">
+                <div>Sort by</div>
+                <div class="sorting-cat">
+                    <div class="featured-cat">Featured <i class="fas fa-chevron-down i-cat"></i></div>
+                    <li class="dropdown-cat">
+                        <ul>Best selling</ul>
+                        <ul>Alphabetically A-Z</ul>
+                        <ul>Alphabetically Z-A</ul>
+                        <ul>Price, low to high</ul>
+                        <ul>Price, high to low</ul>
+                        <ul>Date, new to old</ul>
+                        <ul>Date, old to new</ul>
+                    </li>
+                </div>
+                <div>
+                    <i class="fab fa-microsoft i-cat"></i>
+                    <i class="fas fa-th-list i-cat"></i>
+                </div>
+            </div> -->
+        </div>
+        <div class="main-row-cat">
+            <ng-template ngFor [ngForOf]='clothing' let-i = 'index'>
+                <div class="card-cat active-card card-mobile" [routerLink]="['/details']" routerLinkActive="router-link-active" #page1 (click)="toDetail(i,'clothing')">
+                    <img src='{{ this.itemservice.clothing[i].img }}' alt="card">
+                    <div class="title">{{ this.itemservice.clothing[i].title }}</div>
+                    <div class="price">{{ this.itemservice.clothing[i].price | currency : 'EUR'}}</div>
+                </div>
+            </ng-template>
+        </div>
+        <app-horizontalline></app-horizontalline>
+    </div>
+</div>
+
+
